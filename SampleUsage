@@ -1,0 +1,47 @@
+package com.yourpackagename.news;
+
+import com.zafreapp.shakeit.ShakeDetector;
+import com.zafreapp.shakeit.ShakeDetector.OnShakeListener;
+
+public class ShowLatestPosts extends Activity {
+	// the shake detection
+		private SensorManager mSensorManager;
+		private Sensor mAccelerometer;
+		private ShakeDetector mShakeDetector;
+		
+			@Override
+	protected void onCreate(Bundle arg0) {
+		super.onCreate(arg0);
+		display = ((WindowManager) getSystemService(Context.WINDOW_SERVICE))
+				.getDefaultDisplay();
+		
+		 // Shake IT
+		    	// ShakeDetector initialization
+				mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+				mAccelerometer = mSensorManager
+						.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+				mShakeDetector = new ShakeDetector();
+				mShakeDetector.setOnShakeListener( new OnShakeListener() {
+					@Override
+					public void onShake(int count) {
+						/*
+						 * The following method, "handleShakeEvent(count):" is a stub //
+						 * method you would use to setup whatever you want done once the
+						 * device has been shook.
+						 */
+						
+					//	MyShake();
+					}
+			
+	//Shake IT
+	
+	public void MyShake(){
+		Log.d("Shake it baby","YEAH!");
+		
+	}
+		
+		}
+		
+		
+
+}
